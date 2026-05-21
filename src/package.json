@@ -1,5 +1,5 @@
 {
-  "name": "eq2.application.web.blazorwasm",
+  "name": "blazorwasm",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
