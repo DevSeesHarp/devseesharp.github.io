@@ -1,23 +1,31 @@
-/* 
-@brandLight: #FEF5EC;
-@brandDark: #000000;
-@brandLightColor: #F5BDBC;
-@brandDarkColor: #9C67B0; 
-*/
-
-
-
+.landingpage{
+    background: hsl(187, 74%, 5%);
+    color: white;
+    margin: 0;
+    display: grid;
+    min-height: 100svh;
+    z-index: -1;
+  }
 
 #landing{
-min-height: 100vh;
+  min-height: 70vh;
+  grid-template-columns: 1fr 1fr;
+  width: stretch;
 }
 
+#landing h1 {
+    font-size: xxx-large;
+    font-weight: bolder;
+}
+#landing h1::after {
+  content: "_"; /* or "|" */
+  margin-left: 6px;
+  animation: blink 1s steps(2, start) infinite;
+}
 #landing li {
     font-size: x-large;
     line-height: 2;
     font-weight: bolder;
-    
-    
   }
   #landing li a {
     position: relative;
@@ -25,18 +33,17 @@ min-height: 100vh;
     color: inherit;
 
   }
-
-#landing li :hover {
-  background-color: black;
-  color: greenyellow;
-}
-
-
+  
 /* Blinking cursor */
+#landing li a:hover {
+color: #33ff33; 
+
+}
 #landing li a:hover::after {
   content: "_"; /* or "|" */
   margin-left: 6px;
   animation: blink 1s steps(2, start) infinite;
+
 }
 
 /* Animation */
@@ -46,23 +53,46 @@ min-height: 100vh;
   }
 }
 
-
 #we-are{
-    
+  position: relative;
+  overflow: hidden;
+  background: none;
 }
 
-#we-are > div {
+#we-are::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url(/images/eq2-people.png) center / cover no-repeat;
+  background-attachment: fixed;
+  z-index: 0;
+}
+
+#we-are .box {
+  margin: auto;
+  margin-top: -1vh;
+  height: 30vh;
+  width: stretch;
+  grid-column: 2 / span 2;
+  background-color: hsl(187, 74%, 5%);
+  border-radius: 0 0 0 30vh;
+  z-index: 1;
+}
+
+#we-are > .terminal {
+  grid-column: 2 / span 2;
+  margin: 10vh 5vh;
   padding-top: 40px;
   padding-left: 4px;
-  background-color: #0d0d0d; /* dark terminal */
+  background-color: #222222; /* dark terminal */
   color: #33ff33;            /* classic green */
   font-family: "Courier New", monospace;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+  box-shadow: 0 0 50px rgba(17, 17, 17, 0.4);
   position: relative;
 }
 
-#we-are > div::before {
+#we-are > .terminal::before {
   content: "";
   position: absolute;
   top: 10px;
@@ -98,23 +128,6 @@ min-height: 100vh;
   overflow: hidden;
   white-space: pre-wrap;
   border-right: 2px solid transparent;
-  animation: typing 2s steps(60, end);
-}
-
-/* optional stagger */
-#we-are pre:nth-child(1) { animation-delay: 0s; }
-#we-are pre:nth-child(2) { animation-delay: 1s; }
-#we-are pre:nth-child(3) { animation-delay: 2s; }
-
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-
-
-
-#giving-back{
-    
 }
 
 .container {
@@ -148,12 +161,25 @@ min-height: 100vh;
 
 @media only screen and (max-width: 900px) {
     .container {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
     }
 }
 
 
+#consulting2{
+  position: relative;
+  overflow: hidden;
+  background: none;
+}
 
+#consulting2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url(/images/eq2-datacenter.jpg) center / cover no-repeat;
+  background-attachment: fixed;
+  z-index: 0;
+}
 
 
 
@@ -169,20 +195,6 @@ min-height: 100vh;
   font-weight: bolder;
 }
 
-/* Optional overlay for contrast */
-.parallax::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.35));
-  pointer-events: none;
-}
-
-.parallax,
-.parallax::before {
-  position: relative; /* ensure stacking context */
-}
-
 /* Accessibility: respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .parallax {
@@ -191,20 +203,4 @@ min-height: 100vh;
 }
 
 
-
-
-
-
-
-
-
   * { box-sizing: border-box; }
-  body{
-    margin: 0;
-    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-    background: linear-gradient(180deg, var(--bg1), var(--bg2));
-    color: #0f172a;
-    display: grid;
-    min-height: 100svh;
-    place-items: center;
-  }
