@@ -1,21 +1,21 @@
-.landingpage{
-    background: hsl(187, 74%, 5%);
-    color: white;
-    margin: 0;
-    display: grid;
-    min-height: 100svh;
-    z-index: -1;
-  }
+.landingpage {
+  background: #091e1e;
+  color: white;
+  margin: 0;
+  display: grid;
+  min-height: 100svh;
+  z-index: -1;
+}
 
-#landing{
-  min-height: 70vh;
+#landing {
+  min-height: 80vh;
   grid-template-columns: 1fr 1fr;
   width: stretch;
 }
 
 #landing h1 {
-    font-size: xxx-large;
-    font-weight: bolder;
+  font-size: xxx-large;
+  font-weight: bolder;
 }
 #landing h1::after {
   content: "_"; /* or "|" */
@@ -23,27 +23,24 @@
   animation: blink 1s steps(2, start) infinite;
 }
 #landing li {
-    font-size: x-large;
-    line-height: 2;
-    font-weight: bolder;
-  }
-  #landing li a {
-    position: relative;
-    text-decoration: none;
-    color: inherit;
+  font-size: x-large;
+  line-height: 2;
+  font-weight: bolder;
+}
+#landing li a {
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+}
 
-  }
-  
 /* Blinking cursor */
 #landing li a:hover {
-color: #33ff33; 
-
+  color: #33ff33;
 }
 #landing li a:hover::after {
   content: "_"; /* or "|" */
   margin-left: 6px;
   animation: blink 1s steps(2, start) infinite;
-
 }
 
 /* Animation */
@@ -53,7 +50,19 @@ color: #33ff33;
   }
 }
 
-#we-are{
+@media only screen and (max-width: 900px) {
+  #landing{
+  min-height: 90vh;
+}
+  #landing .landing-header {
+    grid-column: 1 / span 2;
+  }
+  #landing .landing-links {
+    grid-column: 1 / span 2;
+  }
+}
+
+#we-are {
   position: relative;
   overflow: hidden;
   background: none;
@@ -71,11 +80,11 @@ color: #33ff33;
 #we-are .box {
   margin: auto;
   margin-top: -1vh;
-  height: 30vh;
+  height: 20vh;
   width: stretch;
   grid-column: 2 / span 2;
-  background-color: hsl(187, 74%, 5%);
-  border-radius: 0 0 0 30vh;
+  background-color: #091e1e;
+  border-radius: 0 0 0 20vh;
   z-index: 1;
 }
 
@@ -85,8 +94,9 @@ color: #33ff33;
   padding-top: 40px;
   padding-left: 4px;
   background-color: #222222; /* dark terminal */
-  color: #33ff33;            /* classic green */
-  font-family: "Courier New", monospace;
+  color: #33ff33; /* classic green */
+  font-family: "ibm-bios", monospace;
+  font-size: x-large;
   border-radius: 10px;
   box-shadow: 0 0 50px rgba(17, 17, 17, 0.4);
   position: relative;
@@ -111,7 +121,6 @@ color: #33ff33;
   margin-right: 8px;
 }
 
-
 #we-are pre:last-child::after {
   content: "_";
   margin-left: 5px;
@@ -131,52 +140,53 @@ color: #33ff33;
 }
 
 @media only screen and (max-width: 900px) {
-    #we-are .box {
-      grid-column: 2 / span 1;
-    }
-    #we-are > .terminal {
-      grid-column: 1 / span 2;
-    }
+  #we-are .box {
+    grid-column: 1 / span 2;
+    height: 10vh;
+  }
+  #we-are > .terminal {
+    grid-column: 1 / span 2;
+    font-size: x-large;
+    margin: 5vh 2vh;
+  }
 }
 
-
 .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-items: center;
-    align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: center;
 }
 
 .container h1 {
-    font-size: xxx-large;
+  font-size: xxx-large;
 }
 .container ul {
-    list-style-type: none;
-    padding-inline-start: 0rem;
+  list-style-type: none;
+  padding-inline-start: 0rem;
 }
 
 .container p {
-    font-size: large;
+  font-size: large;
 }
 
 #background-video {
-    object-fit: cover;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -2;
+  object-fit: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
 }
 
 @media only screen and (max-width: 900px) {
-    .container {
-        grid-template-columns: 1fr 1fr;
-    }
+  .container {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
-
-#consulting2{
+#consulting2 {
   position: relative;
   overflow: hidden;
   background: none;
@@ -191,15 +201,13 @@ color: #33ff33;
   z-index: 0;
 }
 
-
-
 /* Basic parallax */
 .parallax {
-  min-height: 70vh;                 /* Adjust as needed */
+  min-height: 70vh; /* Adjust as needed */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;     /* The magic */
+  background-attachment: fixed; /* The magic */
   display: grid;
   place-items: center;
   font-weight: bolder;
@@ -208,9 +216,10 @@ color: #33ff33;
 /* Accessibility: respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .parallax {
-    background-attachment: scroll;  /* disable parallax */
+    background-attachment: scroll; /* disable parallax */
   }
 }
 
-
-  * { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
