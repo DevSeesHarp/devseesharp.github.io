@@ -130,6 +130,16 @@ color: #33ff33;
   border-right: 2px solid transparent;
 }
 
+@media only screen and (max-width: 900px) {
+    #we-are .box {
+      grid-column: 2 / span 1;
+    }
+    #we-are > .terminal {
+      grid-column: 1 / span 2;
+    }
+}
+
+
 .container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
