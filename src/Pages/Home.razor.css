@@ -97,20 +97,26 @@
   z-index: 1;
 }
 
-#we-are>.text-box {
+#we-are .text-box {
   grid-column: 2 / span 2;
-  top: -20vh;
+  top: -21vh;
   padding-top: 25vh;
   padding-left: 25px;
   padding-right: 25px;
   background-color: #222222bf;
   color: #ffffff;
   font-family: "ibm-bios", monospace;
-  font-size: x-large;
-  border-radius: 10px;
+  line-height: 1.5;
+  font-size: small;
+  border-radius: 3px;
   position: relative;
 }
 
+#we-are .text-box  p:last-child::after {
+  content: "_";
+  margin-left: 5px;
+  animation: blink 1s steps(2, start) infinite;
+}
 
 @media only screen and (max-width: 900px) {
   #we-are .box {
