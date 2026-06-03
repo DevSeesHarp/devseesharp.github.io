@@ -5,6 +5,7 @@
   display: grid;
   min-height: 100svh;
   z-index: -1;
+  text-shadow: 3px 3px #000000;
 }
 
 #landing {
@@ -17,16 +18,20 @@
   font-size: xxx-large;
   font-weight: bolder;
 }
+
 #landing h1::after {
-  content: "_"; /* or "|" */
+  content: "_";
+  /* or "|" */
   margin-left: 6px;
   animation: blink 1s steps(2, start) infinite;
 }
+
 #landing li {
   font-size: x-large;
   line-height: 2;
   font-weight: bolder;
 }
+
 #landing li a {
   position: relative;
   text-decoration: none;
@@ -37,8 +42,10 @@
 #landing li a:hover {
   color: #33ff33;
 }
+
 #landing li a:hover::after {
-  content: "_"; /* or "|" */
+  content: "_";
+  /* or "|" */
   margin-left: 6px;
   animation: blink 1s steps(2, start) infinite;
 }
@@ -51,12 +58,14 @@
 }
 
 @media only screen and (max-width: 900px) {
-  #landing{
-  min-height: 90vh;
-}
+  #landing {
+    min-height: 90vh;
+  }
+
   #landing .landing-header {
     grid-column: 1 / span 2;
   }
+
   #landing .landing-links {
     grid-column: 1 / span 2;
   }
@@ -88,63 +97,30 @@
   z-index: 1;
 }
 
-#we-are > .terminal {
+#we-are>.text-box {
   grid-column: 2 / span 2;
-  margin: 10vh 5vh;
-  padding-top: 40px;
-  padding-left: 4px;
-  background-color: #222222; /* dark terminal */
-  color: #33ff33; /* classic green */
+  top: -20vh;
+  padding-top: 25vh;
+  padding-left: 25px;
+  padding-right: 25px;
+  background-color: #222222bf;
+  color: #ffffff;
   font-family: "ibm-bios", monospace;
   font-size: x-large;
   border-radius: 10px;
-  box-shadow: 0 0 50px rgba(17, 17, 17, 0.4);
   position: relative;
 }
 
-#we-are > .terminal::before {
-  content: "";
-  position: absolute;
-  top: 10px;
-  left: 15px;
-  width: 12px;
-  height: 12px;
-  background: #ff5f56;
-  border-radius: 50%;
-  box-shadow:
-    20px 0 #ffbd2e,
-    40px 0 #27c93f;
-}
-
-.prompt {
-  color: #00ffaa;
-  margin-right: 8px;
-}
-
-#we-are pre:last-child::after {
-  content: "_";
-  margin-left: 5px;
-  animation: blink 1s steps(2, start) infinite;
-}
-
-@keyframes blink {
-  to {
-    visibility: hidden;
-  }
-}
-
-#we-are pre {
-  overflow: hidden;
-  white-space: pre-wrap;
-  border-right: 2px solid transparent;
-}
 
 @media only screen and (max-width: 900px) {
   #we-are .box {
     grid-column: 1 / span 2;
     height: 10vh;
   }
-  #we-are > .terminal {
+
+  #we-are>.text-box {
+    top: -10vh;
+    padding-top: 15vh;
     grid-column: 1 / span 2;
     font-size: x-large;
     margin: 5vh 2vh;
@@ -161,6 +137,7 @@
 .container h1 {
   font-size: xxx-large;
 }
+
 .container ul {
   list-style-type: none;
   padding-inline-start: 0rem;
@@ -203,11 +180,13 @@
 
 /* Basic parallax */
 .parallax {
-  min-height: 70vh; /* Adjust as needed */
+  min-height: 70vh;
+  /* Adjust as needed */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* The magic */
+  background-attachment: fixed;
+  /* The magic */
   display: grid;
   place-items: center;
   font-weight: bolder;
@@ -216,7 +195,8 @@
 /* Accessibility: respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .parallax {
-    background-attachment: scroll; /* disable parallax */
+    background-attachment: scroll;
+    /* disable parallax */
   }
 }
 
