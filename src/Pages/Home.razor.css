@@ -21,6 +21,7 @@
 
 #landing h1::after {
   content: "_";
+  color: #ffe100;
   /* or "|" */
   margin-left: 6px;
   animation: blink 1s steps(2, start) infinite;
@@ -44,11 +45,8 @@
 }
 
 #landing li a:hover::after {
-  content: "_";
-  color: #ffe100a1;
-  /* or "|" */
+  color: #ffe100;
   margin-left: 6px;
-  animation: blink 1s steps(2, start) infinite;
 }
 
 /* Animation */
@@ -177,6 +175,7 @@
 
 
 #solutions {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr ;
   position: relative;
   overflow: hidden;
   background: none;
@@ -190,6 +189,46 @@
   background-attachment: fixed;
   z-index: 0;
 }
+
+#solutions .box {
+  margin: auto;
+  margin-top: -1vh;
+  height: 20vh;
+  width: stretch;
+  grid-column: 1 / span 6;
+  background-color: #091e1e;
+  border-radius: 0;
+  z-index: 1;
+}
+#solutions .text-box {
+  grid-column: 3 / span 4;
+  top: -21vh;
+  padding-top: 25vh;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 25vh;
+  background: #FFA700A1;
+  background: -webkit-linear-gradient(125deg, rgba(255, 167, 0, 0.6) 0%, rgba(255, 218, 150, 8) 100%);
+  background: -moz-linear-gradient(125deg, rgba(255, 167, 0, 0.6) 0%, rgba(255, 218, 150, 8) 100%);
+  background: linear-gradient(125deg, rgba(255, 167, 0, 0.6) 0%, rgba(255, 218, 150, 8) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#FFA700A1", endColorstr="#FFDA96", GradientType=0);
+  color: #091e1e;
+  text-shadow: none;
+  line-height: 1.5;
+  font-size: small;
+  border-radius: 3px;
+  position: relative;
+}
+#solutions .column {
+  margin: auto;
+  margin-top: -1vh;
+  height: 100%;
+  width: stretch;
+  grid-column: 1 / span 2;
+  background-color: #091e1eb1;
+  z-index: 1;
+}
+
 
 #consulting {
   position: relative;
