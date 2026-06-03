@@ -40,11 +40,12 @@
 
 /* Blinking cursor */
 #landing li a:hover {
-  color: #33ff33;
+  color: #ffe100a1;
 }
 
 #landing li a:hover::after {
   content: "_";
+  color: #ffe100a1;
   /* or "|" */
   margin-left: 6px;
   animation: blink 1s steps(2, start) infinite;
@@ -86,7 +87,7 @@
   z-index: 0;
 }
 
-#we-are .box {
+.box {
   margin: auto;
   margin-top: -1vh;
   height: 20vh;
@@ -97,34 +98,39 @@
   z-index: 1;
 }
 
-#we-are .text-box {
+.text-box {
   grid-column: 2 / span 2;
   top: -21vh;
   padding-top: 25vh;
   padding-left: 25px;
   padding-right: 25px;
-  background-color: #222222bf;
-  color: #ffffff;
-  font-family: "ibm-bios", monospace;
+  padding-bottom: 25vh;
+  background: #FFA700A1;
+  background: -webkit-linear-gradient(125deg, rgba(255, 167, 0, 0.6) 0%, rgba(255, 218, 150, 8) 100%);
+  background: -moz-linear-gradient(125deg, rgba(255, 167, 0, 0.6) 0%, rgba(255, 218, 150, 8) 100%);
+  background: linear-gradient(125deg, rgba(255, 167, 0, 0.6) 0%, rgba(255, 218, 150, 8) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#FFA700A1", endColorstr="#FFDA96", GradientType=0);
+  color: black;
+  text-shadow: none;
   line-height: 1.5;
   font-size: small;
   border-radius: 3px;
   position: relative;
 }
 
-#we-are .text-box  p:last-child::after {
+ .text-box  p:last-child::after {
   content: "_";
   margin-left: 5px;
   animation: blink 1s steps(2, start) infinite;
 }
 
 @media only screen and (max-width: 900px) {
-  #we-are .box {
+ .box {
     grid-column: 1 / span 2;
     height: 10vh;
   }
 
-  #we-are>.text-box {
+  .text-box {
     top: -10vh;
     padding-top: 15vh;
     grid-column: 1 / span 2;
@@ -169,17 +175,33 @@
   }
 }
 
-#consulting2 {
+
+#solutions {
   position: relative;
   overflow: hidden;
   background: none;
 }
 
-#consulting2::before {
+#solutions::before {
   content: "";
   position: absolute;
   inset: 0;
   background: url(/images/eq2-datacenter.jpg) center / cover no-repeat;
+  background-attachment: fixed;
+  z-index: 0;
+}
+
+#consulting {
+  position: relative;
+  overflow: hidden;
+  background: none;
+}
+
+#consulting::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url(/images/eq2-consulting.jpg) center / cover no-repeat;
   background-attachment: fixed;
   z-index: 0;
 }
