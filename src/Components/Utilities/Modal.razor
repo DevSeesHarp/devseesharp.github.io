@@ -1,0 +1,24 @@
+@if (IsVisible)
+{
+    <div class="modal-overlay" @onclick="() => Close()">
+        <div class="modal-container" @onclick:stopPropagation>
+            @ChildContent
+        </div>
+    </div>
+}
+
+@code
+{
+    [Parameter]
+    public bool IsVisible { get; set; }
+
+    [Parameter]
+    public EventCallback<bool> IsVisibleChanged { get; set; }
+
+    [Parameter]
+    public required RenderFragment ChildContent { get; set; }
+
+    Task Close() 
+        => IsVisibleChanged.InvokeAsync(IsVisible = false);
+    
+}

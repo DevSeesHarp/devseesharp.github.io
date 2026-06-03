@@ -1,0 +1,18 @@
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-overlay :hover{
+    background-color: #091e1e21;
+}
+.modal-container {
+    background: #091e1ed7;
+    padding: 1.5rem;
+    border-radius: 10px;
+    min-width: 300px;
+}

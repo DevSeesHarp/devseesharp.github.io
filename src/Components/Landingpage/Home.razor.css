@@ -1,11 +1,8 @@
 .landingpage {
-  background: #091e1e;
-  color: white;
   margin: 0;
   display: grid;
-  min-height: 100svh;
+  min-height: 100vh;
   z-index: -1;
-  text-shadow: 3px 3px #000000;
 }
 
 #landing {
@@ -91,7 +88,7 @@
   height: 20vh;
   width: stretch;
   grid-column: 2 / span 2;
-  background-color: #091e1e;
+  background-color: #091e1eb1;
   border-radius: 0 0 0 20vh;
   z-index: 1;
 }
@@ -196,7 +193,7 @@
   height: 20vh;
   width: stretch;
   grid-column: 1 / span 6;
-  background-color: #091e1e;
+  background-color: #091e1eb1;
   border-radius: 0;
   z-index: 1;
 }
@@ -212,7 +209,7 @@
   background: -moz-linear-gradient(125deg, rgba(255, 167, 0, 0.6) 0%, rgba(255, 218, 150, 8) 100%);
   background: linear-gradient(125deg, rgba(255, 167, 0, 0.6) 0%, rgba(255, 218, 150, 8) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#FFA700A1", endColorstr="#FFDA96", GradientType=0);
-  color: #091e1e;
+  color: #091e1eb1;
   text-shadow: none;
   line-height: 1.5;
   font-size: small;
