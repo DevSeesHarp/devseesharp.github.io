@@ -1,6 +1,6 @@
 ﻿
 .bottom-row {
-    background: #000;
+    background: #0a1818;
     padding: 2.5rem;
     padding-top: 25vh;
     align-items: center;
@@ -11,10 +11,12 @@
     padding-inline-start: 0rem;
 }
 
-.bottom-row p,
-a,
-li {
-    color: #fff;
+.bottom-row a {
+    text-decoration: none;
+}
+
+.bottom-row p, a, li {
+    color: #fef5ec;
     font-size: large;
     margin: 0;
     padding-bottom: 0.5rem;
