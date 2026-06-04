@@ -7,11 +7,13 @@
 main {
     flex: 1;
 }
-.content{
-    padding:3rem;
+
+.content {
+    padding: 3rem;
 }
+
 .navigation {
-    padding:3rem;
+    padding: 3rem;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-auto-flow: column;
@@ -31,6 +33,10 @@ main {
 
 
 @media only screen and (max-width: 900px) {
+    .content {
+        padding: 0 3rem;
+    }
+
     .navigation {
         grid-template-columns: 1fr 1fr;
     }
@@ -43,6 +49,7 @@ main {
     color: inherit;
     margin: auto;
 }
+
 .btn :hover {
     color: #ffe100;
 }
