@@ -77,7 +77,8 @@
 
 .box {
   margin: auto;
-  margin-top: -1vh;
+  top: 0;
+  position: absolute;
   height: 20vh;
   width: stretch;
   grid-column: 2 / span 2;
@@ -88,7 +89,6 @@
 
 .text-box {
   grid-column: 2 / span 2;
-  top: -21vh;
   padding-top: 25vh;
   padding-left: 25px;
   padding-right: 25px;
@@ -182,7 +182,8 @@
 
 #solutions .box {
   margin: auto;
-  margin-top: -1vh;
+  top: 0;
+  position: absolute;
   height: 20vh;
   width: stretch;
   grid-column: 1 / span 6;
@@ -190,9 +191,10 @@
   border-radius: 0;
   z-index: 1;
 }
+
+
 #solutions .text-box {
   grid-column: 3 / span 4;
-  top: -21vh;
   padding-top: 25vh;
   padding-left: 25px;
   padding-right: 25px;
@@ -209,14 +211,28 @@
   border-radius: 3px;
   position: relative;
 }
+
 #solutions .column {
   margin: auto;
-  margin-top: -1vh;
   height: 100%;
   width: stretch;
   grid-column: 1 / span 2;
   background-color: #091e1e;
   z-index: 1;
+}
+
+@media only screen and (max-width: 900px) {
+#solutions .box {
+    grid-column: 1 / span 2;
+    height: 10vh;
+  }
+
+ #solutions .text-box {
+    padding-top: 5vh;
+    grid-column: 1 / span 2;
+    font-size: x-large;
+    margin: 5vh 2vh;
+  }
 }
 
 
