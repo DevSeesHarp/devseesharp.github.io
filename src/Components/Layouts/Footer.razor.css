@@ -1,0 +1,36 @@
+﻿
+.bottom-row {
+    background: #000;
+    padding: 2.5rem;
+    padding-top: 25vh;
+    align-items: center;
+}
+
+.bottom-row ul {
+    list-style: none;
+    padding-inline-start: 0rem;
+}
+
+.bottom-row p,
+a,
+li {
+    color: #fff;
+    font-size: large;
+    margin: 0;
+    padding-bottom: 0.5rem;
+}
+
+.bottom-row ::deep a,
+.bottom-row ::deep .btn-link {
+    white-space: nowrap;
+}
+
+.bottom-row ::deep a:hover,
+.bottom-row ::deep .btn-link:hover {
+    text-decoration: underline;
+}
+
+.bottom-row ::deep a:first-child {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

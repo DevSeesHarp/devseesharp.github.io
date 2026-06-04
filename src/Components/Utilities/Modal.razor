@@ -1,7 +1,8 @@
 @if (IsVisible)
 {
-    <div class="modal-overlay" @onclick="() => Close()">
-        <div class="modal-container" @onclick:stopPropagation>
+    <div class="modal-overlay" @onclick="Close">
+        <div class="modal-container background-dark-pattern" @onclick:stopPropagation>
+            <a class="close" @onclick="Close">X</a>
             @ChildContent
         </div>
     </div>

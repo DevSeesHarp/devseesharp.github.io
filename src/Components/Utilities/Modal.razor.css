@@ -7,12 +7,15 @@
     z-index: 1000;
 }
 
-.modal-overlay :hover{
-    background-color: #091e1e21;
-}
 .modal-container {
-    background: #091e1ed7;
+    display: grid;
+    grid-template-columns: 1fr;
+    background: #091e1e;
+    color: #fff;
     padding: 1.5rem;
-    border-radius: 10px;
     min-width: 300px;
+}
+
+.modal-container .close{
+        grid-column-end: none;
 }

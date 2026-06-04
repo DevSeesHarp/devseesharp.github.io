@@ -46,13 +46,6 @@
   margin-left: 6px;
 }
 
-/* Animation */
-@keyframes blink {
-  to {
-    visibility: hidden;
-  }
-}
-
 @media only screen and (max-width: 900px) {
   #landing {
     min-height: 90vh;
@@ -88,7 +81,7 @@
   height: 20vh;
   width: stretch;
   grid-column: 2 / span 2;
-  background-color: #091e1eb1;
+  background-color: #091e1e;
   border-radius: 0 0 0 20vh;
   z-index: 1;
 }
@@ -193,7 +186,7 @@
   height: 20vh;
   width: stretch;
   grid-column: 1 / span 6;
-  background-color: #091e1eb1;
+  background-color: #081818c9;
   border-radius: 0;
   z-index: 1;
 }
@@ -209,7 +202,7 @@
   background: -moz-linear-gradient(125deg, rgba(255, 167, 0, 0.6) 0%, rgba(255, 218, 150, 8) 100%);
   background: linear-gradient(125deg, rgba(255, 167, 0, 0.6) 0%, rgba(255, 218, 150, 8) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#FFA700A1", endColorstr="#FFDA96", GradientType=0);
-  color: #091e1eb1;
+  color: #091e1e;
   text-shadow: none;
   line-height: 1.5;
   font-size: small;
@@ -222,7 +215,7 @@
   height: 100%;
   width: stretch;
   grid-column: 1 / span 2;
-  background-color: #091e1eb1;
+  background-color: #091e1e;
   z-index: 1;
 }
 

@@ -1,31 +1,33 @@
 ﻿@inherits LayoutComponentBase
+@inject NavigationManager NavigationManager
+
 <div class="page">
     <main>
         <div class="navigation">
             <div>
-                <h1>EQ2 Technology</h1>
+                <h1 @onclick="@(() => OnNavigate("/"))">EQ2 Technology</h1>
             </div>
-            <button class="btn" @onclick="() => MenuVisible = !MenuVisible">
-                <h1>Q</h1>
+            <button class="btn" @onclick="() => _menuVisible = !_menuVisible">
+                <h1>Menu</h1>
             </button>
-            <Modal @bind-IsVisible="MenuVisible">
+            <Modal @bind-IsVisible="_menuVisible">
                 <div class="navigation-links">
-                    <ul>
+                    <ul style="list-style: none;">
                         <li>
                             <b style="font-size: xx-large;">&#x203A;&nbsp;</b>
-                            <a href="/solutions">/solutions</a>
+                            <a @onclick="@(() => OnNavigate("/solutions"))">/solutions</a>
                         </li>
                         <li>
                             <b style="font-size: xx-large;">&#x203A;&nbsp;</b>
-                            <a href="/consulting">/consulting</a>
+                            <a @onclick="@(() => OnNavigate("/consulting"))">/consulting</a>
                         </li>
                         <li>
                             <b style="font-size: xx-large;">&#x203A;&nbsp;</b>
-                            <a href="/about">/about</a>
+                            <a @onclick="@(() => OnNavigate("/about"))">/about</a>
                         </li>
                         <li>
                             <b style="font-size: xx-large;">&#x203A;&nbsp;</b>
-                            <a href="/giving-back">/giving_back</a>
+                            <a @onclick="@(() => OnNavigate("/giving-back"))">/giving_back</a>
                         </li>
                     </ul>
                 </div>
@@ -35,16 +37,17 @@
             @Body
         </article>
 
-        <div class="bottom-row">
-            <h2 id="contact-text">Contact</h2>
-            <ul id="contact">
-                <li>> <a href="mailto:info@eq2.se">info@eq2.se</a></li>
-                <li>> <a href="mailto:career@eq2.se">career@eq2.se</a></li>
-            </ul>
-        </div>
+        <Footer />
     </main>
 </div>
 @code
 {
-    public bool MenuVisible { get; set; }
+    bool _menuVisible;
+
+    void OnNavigate(string path)
+    {
+        NavigationManager.NavigateTo(path);
+        _menuVisible = false;
+        StateHasChanged();
+    }
 }
