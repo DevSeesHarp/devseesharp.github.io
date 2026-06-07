@@ -88,6 +88,7 @@
 }
 
 .text-box {
+  z-index: 1;
   grid-column: 2 / span 2;
   padding-top: 25vh;
   padding-left: 25px;
@@ -103,27 +104,18 @@
   line-height: 1.5;
   font-size: small;
   border-radius: 3px;
-  position: relative;
-}
-
- .text-box  p:last-child::after {
-  content: "_";
-  margin-left: 5px;
-  animation: blink 1s steps(2, start) infinite;
 }
 
 @media only screen and (max-width: 900px) {
- .box {
+  .box {
     grid-column: 1 / span 2;
     height: 10vh;
   }
 
   .text-box {
-    top: -10vh;
     padding-top: 15vh;
     grid-column: 1 / span 2;
     font-size: x-large;
-    margin: 5vh 2vh;
   }
 }
 
@@ -147,16 +139,6 @@
   font-size: large;
 }
 
-#background-video {
-  object-fit: cover;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -2;
-}
-
 @media only screen and (max-width: 900px) {
   .container {
     grid-template-columns: 1fr 1fr;
@@ -165,7 +147,8 @@
 
 
 #solutions {
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr ;
+  margin-top: 20vh;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   position: relative;
   overflow: hidden;
   background: none;
@@ -221,17 +204,26 @@
   z-index: 1;
 }
 
+#solutions .column h1 {
+  margin: auto;
+}
+
 @media only screen and (max-width: 900px) {
-#solutions .box {
-    grid-column: 1 / span 2;
+  #solutions .box {
+    grid-column: 1 / span 6;
     height: 10vh;
   }
 
- #solutions .text-box {
+  #solutions .column {
+    grid-column: 1 / span 6;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #solutions .text-box {
     padding-top: 5vh;
-    grid-column: 1 / span 2;
+    grid-column: 1 / span 6;
     font-size: x-large;
-    margin: 5vh 2vh;
+    margin: 5vh 0vh;
   }
 }
 
@@ -249,6 +241,23 @@
   background: url(/images/eq2-consulting.jpg) center / cover no-repeat;
   background-attachment: fixed;
   z-index: 0;
+}
+
+#consulting .text-box-headers-column {
+  z-index: 1;
+  margin: auto;
+}
+
+#consulting .text-box-headers {
+  display: none;
+}
+
+@media only screen and (max-width: 900px) {
+  #consulting .text-box-headers-column {
+    display: none;
+  }
+
+
 }
 
 /* Basic parallax */
@@ -271,8 +280,4 @@
     background-attachment: scroll;
     /* disable parallax */
   }
-}
-
-* {
-  box-sizing: border-box;
 }
