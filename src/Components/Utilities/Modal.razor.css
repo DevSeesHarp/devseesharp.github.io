@@ -10,8 +10,9 @@
 .modal-container {
     display: grid;
     grid-template-columns: 1fr;
-    background: #091e1e;
+    background: #091e1ed2;
     color: #fff;
+    border:#091e1e groove;
     padding: 1.5rem;
     min-width: 300px;
 }

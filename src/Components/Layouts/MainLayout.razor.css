@@ -43,11 +43,18 @@ main {
 }
 
 .btn {
+    text-shadow: none;
     font-family: inherit;
-    text-shadow: inherit;
     background: inherit;
     color: inherit;
     margin: auto;
+    border-radius: 50%;
+    background: #FFA700A1;
+    background: -webkit-linear-gradient(125deg, rgba(255, 167, 0, 0.3) 0%, rgba(255, 218, 150, 0.8) 100%);
+    background: -moz-linear-gradient(125deg, rgba(255, 167, 0, 0.3) 0%, rgba(255, 218, 150, 0.8) 100%);
+    background: linear-gradient(125deg, rgba(255, 167, 0, 0.3) 0%, rgba(255, 218, 150, 0.8) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#FFA700A1", endColorstr="#FFDA96", GradientType=0);
+ 
 }
 
 .btn :hover {
