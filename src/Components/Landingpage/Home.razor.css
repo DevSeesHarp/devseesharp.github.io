@@ -65,243 +65,42 @@
 #grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  text-decoration: none;
+  text-shadow: none;
 }
 
 #grid .grid-item {
   aspect-ratio: 1 / 1;
-  background: url(/images/eq2-field.jpg) center / cover no-repeat;
 }
-
+#grid .grid-item :hover {
+  background-color: rgba(0, 0, 0, 0.25);
+  filter: blur(15%);
+  color: inherit;
+}
 #grid .grid-item-overlay {
   height: 100%;
   display: grid;
   justify-items: center;
-  transition: filter 0.3s;
+  transition: filter 0.5s;
 
 }
 
 #grid .grid-item-overlay > *
 {
+  color: transparent;
   width: -webkit-fill-available; /* Chrome, Safari */
   width: -moz-available; /* Firefox */
   width: stretch; /* Standard syntax */
 }
 
-#grid .grid-item-overlay .grid-item > * 
-{
-   color: transparent;
-}
-#grid .grid-item-overlay .grid-item > * :hover {
+#grid .grid-item-overlay > * :hover {
   color: inherit;
-  filter: blur(5px);
 }
 
 @media only screen and (max-width: 900px) {
   #grid {
     grid-template-columns: 1fr 1fr;
   }
-}
-
-#we-are {
-  position: relative;
-  overflow: hidden;
-  background: none;
-}
-
-#we-are::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url(/images/eq2-field.jpg) center / cover no-repeat;
-  background-attachment: fixed;
-  z-index: 0;
-}
-
-.box {
-  margin: auto;
-  top: 0;
-  position: absolute;
-  height: 20vh;
-  width: -webkit-fill-available; /* Chrome, Safari */
-  width: -moz-available; /* Firefox */
-  width: stretch; /* Standard syntax */
-  grid-column: 2 / span 2;
-  background-color: #091e1e;
-  border-radius: 0 0 0 20vh;
-  z-index: 1;
-}
-
-.text-box {
-  z-index: 1;
-  grid-column: 2 / span 2;
-  padding-top: 25vh;
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-bottom: 25vh;
-  background: #FFA700A1;
-  background: -webkit-linear-gradient(125deg, rgba(255, 167, 0, 0.6) 0%, rgba(255, 218, 150, 8) 100%);
-  background: -moz-linear-gradient(125deg, rgba(255, 167, 0, 0.6) 0%, rgba(255, 218, 150, 8) 100%);
-  background: linear-gradient(125deg, rgba(255, 167, 0, 0.6) 0%, rgba(255, 218, 150, 8) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#FFA700A1", endColorstr="#FFDA96", GradientType=0);
-  color: black;
-  text-shadow: none;
-  line-height: 1.5;
-  font-size: small;
-  border-radius: 3px;
-}
-
-@media only screen and (max-width: 900px) {
-  .box {
-    grid-column: 1 / span 2;
-    height: 10vh;
-  }
-
-  .text-box {
-    padding-top: 15vh;
-    grid-column: 1 / span 2;
-    font-size: x-large;
-  }
-}
-
-.container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  justify-items: center;
-  align-items: center;
-}
-
-.container h1 {
-  font-size: xxx-large;
-}
-
-.container ul {
-  list-style-type: none;
-  padding-inline-start: 0rem;
-}
-
-.container p {
-  font-size: large;
-}
-
-@media only screen and (max-width: 900px) {
-  .container {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-
-#solutions {
-  margin-top: 20vh;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  position: relative;
-  overflow: hidden;
-  background: none;
-}
-
-#solutions::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url(/images/eq2-datacenter.jpg) center / cover no-repeat;
-  background-attachment: fixed;
-  z-index: 0;
-}
-
-#solutions .box {
-  margin: auto;
-  top: 0;
-  position: absolute;
-  height: 20vh;
-  width: stretch;
-  grid-column: 1 / span 6;
-  background-color: #081818c9;
-  border-radius: 0;
-  z-index: 1;
-}
-
-
-#solutions .text-box {
-  grid-column: 3 / span 4;
-  padding-top: 25vh;
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-bottom: 25vh;
-  background: #FFA700A1;
-  background: -webkit-linear-gradient(125deg, rgba(255, 167, 0, 0.6) 0%, rgba(255, 218, 150, 8) 100%);
-  background: -moz-linear-gradient(125deg, rgba(255, 167, 0, 0.6) 0%, rgba(255, 218, 150, 8) 100%);
-  background: linear-gradient(125deg, rgba(255, 167, 0, 0.6) 0%, rgba(255, 218, 150, 8) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#FFA700A1", endColorstr="#FFDA96", GradientType=0);
-  color: #091e1e;
-  text-shadow: none;
-  line-height: 1.5;
-  font-size: small;
-  border-radius: 3px;
-  position: relative;
-}
-
-#solutions .column {
-  margin: auto;
-  height: 100%;
-  width: stretch;
-  grid-column: 1 / span 2;
-  background-color: #091e1e;
-  z-index: 1;
-}
-
-#solutions .column h1 {
-  margin: auto;
-}
-
-@media only screen and (max-width: 900px) {
-  #solutions .box {
-    grid-column: 1 / span 6;
-    height: 10vh;
-  }
-
-  #solutions .column {
-    grid-column: 1 / span 6;
-    grid-template-columns: 1fr 1fr;
-  }
-
-  #solutions .text-box {
-    padding-top: 5vh;
-    grid-column: 1 / span 6;
-    font-size: x-large;
-    margin: 5vh 0vh;
-  }
-}
-
-
-#consulting {
-  position: relative;
-  overflow: hidden;
-  background: none;
-}
-
-#consulting::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url(/images/eq2-consulting.jpg) center / cover no-repeat;
-  background-attachment: fixed;
-  z-index: 0;
-}
-
-#consulting .text-box-headers-column {
-  z-index: 1;
-  margin: auto;
-}
-
-#consulting .text-box-headers {
-  display: none;
-}
-
-@media only screen and (max-width: 900px) {
-  #consulting .text-box-headers-column {
-    display: none;
-  }
-
-
 }
 
 /* Basic parallax */
