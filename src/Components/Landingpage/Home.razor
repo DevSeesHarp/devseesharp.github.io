@@ -32,85 +32,45 @@
     </div><!--landing-->
 
     <div id="grid">
-        <div class="grid-item">
-            <div class="grid-item-overlay">
-                <p>Eq2</p>
+        @foreach (var item in _gridItems)
+        {
+            <div class="grid-item" style="@item.GetStyle()">
+                <div class="grid-item-overlay">
+                    <a href="@item.Hyperlink">
+                        @item.Text
+                    </a>
+                </div>
             </div>
-        </div>
-        <div class="grid-item">
-            <div class="grid-item-overlay">
-                <p>Eq2</p>
-            </div>
-        </div>
-        <div class="grid-item">
-            <div class="grid-item-overlay">
-                <p>Eq2</p>
-            </div>
-        </div>
-        <div class="grid-item">
-            <div class="grid-item-overlay">
-                <p>Eq2</p>
-            </div>
-        </div>
-        <div class="grid-item">
-            <div class="grid-item-overlay">
-                <p>Eq2</p>
-            </div>
-        </div>
-        <div class="grid-item">
-            <div class="grid-item-overlay">
-                <p>Eq2</p>
-            </div>
-        </div>
-        <div class="grid-item">
-            <div class="grid-item-overlay">
-                <p>Eq2</p>
-            </div>
-        </div>
-        <div class="grid-item">
-            <div class="grid-item-overlay">
-                <p>Eq2</p>
-            </div>
-        </div>
-        <div class="grid-item">
-            <div class="grid-item-overlay">
-                <p>Eq2</p>
-            </div>
-        </div>
-        <div class="grid-item">
-            <div class="grid-item-overlay">
-                <p>Eq2</p>
-            </div>
-        </div>
-        <div class="grid-item">
-            <div class="grid-item-overlay">
-                <p>Eq2</p>
-            </div>
-        </div>
-        <div class="grid-item">
-            <div class="grid-item-overlay">
-                <p>Eq2</p>
-            </div>
-        </div>
-        <div class="grid-item">
-            <div class="grid-item-overlay">
-                <p>Eq2</p>
-            </div>
-        </div>
-        <div class="grid-item">
-            <div class="grid-item-overlay">
-                <p>Eq2</p>
-            </div>
-        </div>
-        <div class="grid-item">
-            <div class="grid-item-overlay">
-                <p>Eq2</p>
-            </div>
-        </div>
-        <div class="grid-item">
-            <div class="grid-item-overlay">
-                <p>Eq2</p>
-            </div>
-        </div>
+        }
     </div><!--grid-->
 </div><!--landingpage-->
+
+@code {
+    ICollection<GridItem> _gridItems = [];
+
+    protected override void OnInitialized()
+    {
+        _gridItems = [
+            new("Solutions", "/solutions", "/images/eq2-datacenter.jpg"),
+            new("We are", "/solutions", "/images/eq2-field.jpg"),
+            new("Consultants", "/solutions", "/images/eq2-consulting.jpg"),
+            new("People", "/about", "/images/eq2-field.jpg"),
+            new("Giving back", "/solutions", "/images/eq2-datacenter.jpg"),
+            new("Solutions", "/solutions", "/images/eq2-datacenter.jpg"),
+            new("We are", "/solutions", "/images/eq2-field.jpg"),
+            new("Consultants", "/solutions", "/images/eq2-consulting.jpg"),
+            new("People", "/about", "/images/eq2-field.jpg"),
+            new("Giving back", "/solutions", "/images/eq2-datacenter.jpg"),
+            new("Solutions", "/solutions", "/images/eq2-datacenter.jpg"),
+            new("We are", "/solutions", "/images/eq2-field.jpg"),
+            new("Consultants", "/solutions", "/images/eq2-consulting.jpg"),
+            new("People", "/about", "/images/eq2-field.jpg"),
+            new("Giving back", "/solutions", "/images/eq2-datacenter.jpg"),
+        ];
+    }
+
+    record GridItem(string Text, string Hyperlink, string BackgroundPath)
+    {
+        public string GetStyle() => $"url({BackgroundPath}) center / cover no-repeat";
+    }
+}
