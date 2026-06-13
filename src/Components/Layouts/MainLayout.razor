@@ -7,31 +7,10 @@
             <div>
                 <h1 @onclick="@(() => OnNavigate("/"))">EQ2 Technology</h1>
             </div>
+            <span />
             <button class="btn" @onclick="() => _menuVisible = !_menuVisible">
                 <h1>Menu</h1>
             </button>
-            <Modal @bind-IsVisible="_menuVisible">
-                <div class="navigation-links">
-                    <ul style="list-style: none;">
-                        <li>
-                            <b style="font-size: xx-large;">&#x203A;&nbsp;</b>
-                            <a @onclick="@(() => OnNavigate("/solutions"))">/solutions</a>
-                        </li>
-                        <li>
-                            <b style="font-size: xx-large;">&#x203A;&nbsp;</b>
-                            <a @onclick="@(() => OnNavigate("/consulting"))">/consulting</a>
-                        </li>
-                        <li>
-                            <b style="font-size: xx-large;">&#x203A;&nbsp;</b>
-                            <a @onclick="@(() => OnNavigate("/about"))">/about</a>
-                        </li>
-                        <li>
-                            <b style="font-size: xx-large;">&#x203A;&nbsp;</b>
-                            <a @onclick="@(() => OnNavigate("/giving-back"))">/giving_back</a>
-                        </li>
-                    </ul>
-                </div>
-            </Modal>
         </div>
         <article class="content">
             @Body
@@ -40,6 +19,31 @@
         <Footer />
     </main>
 </div>
+
+<Modal @bind-IsVisible="_menuVisible">
+    <div class="navigation-links">
+        <ul style="list-style: none;">
+            <li>
+                <b style="font-size: xx-large;">&#x203A;&nbsp;</b>
+                <a @onclick="@(() => OnNavigate("/solutions"))">/solutions</a>
+            </li>
+            <li>
+                <b style="font-size: xx-large;">&#x203A;&nbsp;</b>
+                <a @onclick="@(() => OnNavigate("/consulting"))">/consulting</a>
+            </li>
+            <li>
+                <b style="font-size: xx-large;">&#x203A;&nbsp;</b>
+                <a @onclick="@(() => OnNavigate("/about"))">/about</a>
+            </li>
+            <li>
+                <b style="font-size: xx-large;">&#x203A;&nbsp;</b>
+                <a @onclick="@(() => OnNavigate("/giving-back"))">/giving_back</a>
+            </li>
+        </ul>
+    </div>
+</Modal>
+
+
 @code
 {
     bool _menuVisible;

@@ -7,10 +7,15 @@
 
 #landing {
   min-height: 80vh;
+  display: grid;
   grid-template-columns: 1fr 1fr;
   width: -webkit-fill-available; /* Chrome, Safari */
   width: -moz-available; /* Firefox */
   width: stretch; /* Standard syntax */
+}
+
+#landing .landing-header{
+      padding-inline-start: 40px;
 }
 
 #landing h1 {
@@ -26,6 +31,10 @@
   animation: blink 1s steps(2, start) infinite;
 }
 
+#landing ul 
+{
+  list-style: none;
+}
 #landing li {
   font-size: x-large;
   line-height: 2;
@@ -74,23 +83,27 @@
 }
 #grid .grid-item :hover {
   background-color: rgba(0, 0, 0, 0.25);
-  filter: blur(15%);
+  backdrop-filter: blur(15%);
   color: inherit;
 }
 #grid .grid-item-overlay {
   height: 100%;
   display: grid;
   justify-items: center;
-  transition: filter 0.5s;
-
+  transition: backdrop-filter 0.5s;
 }
 
 #grid .grid-item-overlay > *
 {
-  color: transparent;
   width: -webkit-fill-available; /* Chrome, Safari */
   width: -moz-available; /* Firefox */
   width: stretch; /* Standard syntax */
+  
+  color: #ffffff30;
+  font-size: x-large;
+  text-decoration: none;
+  padding: 15px;
+  transition: color 0.5s;
 }
 
 #grid .grid-item-overlay > * :hover {
