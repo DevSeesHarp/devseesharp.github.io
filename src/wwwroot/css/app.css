@@ -18,12 +18,18 @@ body {
     margin: 0;
     min-height: 100vh;
     font-family: 'Avenir', sans-serif;
-    text-shadow: 3px 3px 1px #000000;
+    text-shadow: 3px 3px 1px #b7b19b;
     color: #fef5ec;
 }
 .background-dark-pattern{
-    background-color: #0a1818;
-    background-image:  radial-gradient(circle farthest-side at 0% 50%, #0a1818 23.5%, transparent 0), radial-gradient(circle farthest-side at 0% 50%, #010707 24%, transparent 0), linear-gradient(#0a1818 14%, transparent 0, transparent 85%, #0a1818 0), linear-gradient(150deg, #0a1818 24%, #010707 0 26%, transparent 0 74%, #010707 0 76%, #0a1818 0), linear-gradient(30deg, #0a1818 24%, #010707 0 26%, transparent 0 74%, #010707 0 76%, #0a1818 0), linear-gradient(90deg, #010707 1.6%, #0a1818 0 98.4%, #010707 0);
+    background-color: #a59f8a;
+    background-image:  
+        radial-gradient(circle farthest-side at 0% 50%, #a59f8a 23.5%, transparent 0), 
+        radial-gradient(circle farthest-side at 0% 50%, #b7b19b 24%, transparent 0), 
+        linear-gradient(#a59f8a 14%, transparent 0, transparent 85%, #a59f8a 0), 
+        linear-gradient(150deg, #a59f8a 24%, #b7b19b 0 26%, transparent 0 74%, #b7b19b 0 76%, #a59f8a 0), 
+        linear-gradient(30deg, #a59f8a 24%, #b7b19b 0 26%, transparent 0 74%, #b7b19b 0 76%, #a59f8a 0), 
+        linear-gradient(90deg, #b7b19b 1.6%, #a59f8a 0 98.4%, #b7b19b 0);
     background-position: 16px 23px, 14px 23px, 0 0, 0 0, 0 0, 0 0;
     background-size: 30px 45px;
 }
