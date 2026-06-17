@@ -8,15 +8,15 @@
 }
 
 .modal-container {
+    text-shadow: none;
     display: grid;
     grid-template-columns: 1fr;
-    background: #091e1ed2;
-    color: #fff;
-    border:#091e1e groove;
+    color: inherit;
     padding: 1.5rem;
     min-width: 300px;
+    filter: drop-shadow(2px 4px 6px #000F23);
 }
 
 .modal-container .close{
-        grid-column-end: none;
+    grid-column-end: none;
 }
