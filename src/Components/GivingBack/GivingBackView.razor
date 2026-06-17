@@ -1,4 +1,4 @@
-﻿@page "/giving-back"
+﻿@attribute [Route(Path)]
 
 <PageTitle>EQ2 /giving_back</PageTitle>
 <section class="giving-back-page">
@@ -9,3 +9,8 @@
         </div>
     </div>
 </section>
+
+@code
+{
+    public const string Path = "/giving-back";
+}

@@ -1,0 +1,24 @@
+﻿@using System.Diagnostics.CodeAnalysis
+@using System.Runtime.InteropServices
+@using Microsoft.VisualBasic
+@inject NavigationHandler NavigationHandler
+
+<div id="landing" class="container">
+    <div class="landing-header">
+        <h1>EQ2 Technology</h1>
+        <p>IT Consulting</p>
+    </div>
+    <div class="landing-links">
+        <ul>
+            @foreach (var item in NavigationHandler.Items)
+            {
+                
+                <li>
+                    <b style="font-size: xx-large;">&#x203A;&nbsp;</b>
+                    <a @onclick="item.OnClick">@item.Text</a>
+                </li>
+            }
+
+        </ul>
+    </div>
+</div>

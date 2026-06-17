@@ -1,15 +1,15 @@
 ﻿@inherits LayoutComponentBase
-@inject NavigationManager NavigationManager
+@inject NavigationHandler NavigationHandler
 
 <div class="page">
     <main>
         <div class="navigation">
             <div>
-                <h1 @onclick="@(() => OnNavigate("/"))">EQ2 Technology</h1>
+                <h1 @onclick="NavigationHandler.Home.OnClick">EQ2 Technology</h1>
             </div>
             <span />
             <button class="btn" @onclick="() => _menuVisible = !_menuVisible">
-                <h1>Menu</h1>
+                <h1>/</h1>
             </button>
         </div>
         <article class="content">
@@ -23,22 +23,13 @@
 <Modal @bind-IsVisible="_menuVisible">
     <div class="navigation-links">
         <ul style="list-style: none;">
-            <li>
-                <b style="font-size: xx-large;">&#x203A;&nbsp;</b>
-                <a @onclick="@(() => OnNavigate("/solutions"))">/solutions</a>
-            </li>
-            <li>
-                <b style="font-size: xx-large;">&#x203A;&nbsp;</b>
-                <a @onclick="@(() => OnNavigate("/consulting"))">/consulting</a>
-            </li>
-            <li>
-                <b style="font-size: xx-large;">&#x203A;&nbsp;</b>
-                <a @onclick="@(() => OnNavigate("/about"))">/about</a>
-            </li>
-            <li>
-                <b style="font-size: xx-large;">&#x203A;&nbsp;</b>
-                <a @onclick="@(() => OnNavigate("/giving-back"))">/giving_back</a>
-            </li>
+            @foreach (var item in NavigationHandler.Items)
+            {
+                <li>
+                    <b style="font-size: xx-large;">&#x203A;&nbsp;</b>
+                    <a @onclick="@(() => OnNavigate(item))">@item.Text</a>
+                </li>
+            }
         </ul>
     </div>
 </Modal>
@@ -48,9 +39,9 @@
 {
     bool _menuVisible;
 
-    void OnNavigate(string path)
+    void OnNavigate(NavigationHandler.NavigationLinks item)
     {
-        NavigationManager.NavigateTo(path);
+        item.OnClick.Invoke();
         _menuVisible = false;
         StateHasChanged();
     }

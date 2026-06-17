@@ -1,4 +1,5 @@
-﻿@page "/consulting"
+﻿@attribute [Route(Path)]
+@page "/consulting"
 
 <PageTitle>EQ2 /consulting</PageTitle>
 <section class="consulting-page">
@@ -9,3 +10,8 @@
         </div>
     </div>
 </section>
+
+@code
+{
+    public const string Path = "/solutions";
+}
