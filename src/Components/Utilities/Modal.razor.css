@@ -8,6 +8,7 @@
 }
 
 .modal-container {
+    min-width: 60px;
     text-shadow: none;
     display: grid;
     grid-template-columns: 1fr;
@@ -15,6 +16,11 @@
     padding: 1.5rem;
     min-width: 300px;
     filter: drop-shadow(2px 4px 6px #000F23);
+}
+
+.modal-container .btn{
+    width: 60px;
+    grid-column-end: none;
 }
 
 .modal-container .close{
