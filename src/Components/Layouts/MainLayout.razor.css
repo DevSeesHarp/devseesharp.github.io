@@ -47,8 +47,11 @@ main {
     font-family: inherit;
     background: inherit;
     color: inherit;
+    font-weight: bolder;
     margin: auto;
-    border-radius: 50%;
+    border-radius: 15%;
+    border-color: #928e7f;
+    aspect-ratio: 1 / 1;
     background: #FFA700A1;
     background: -webkit-linear-gradient(125deg, rgba(255, 167, 0, 0.3) 0%, rgba(255, 218, 150, 0.8) 100%);
     background: -moz-linear-gradient(125deg, rgba(255, 167, 0, 0.3) 0%, rgba(255, 218, 150, 0.8) 100%);
