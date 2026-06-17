@@ -12,33 +12,9 @@ main {
     padding: 3rem;
 }
 
-.navigation {
-    padding: 3rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-auto-flow: column;
-}
-
-.navigation .logo {
-    padding-left: 3rem;
-}
-
-.navigation .logo h1::after {
-    content: "_";
-    color: #ffe100;
-    /* or "|" */
-    margin-left: 6px;
-    animation: blink 1s steps(2, start) infinite;
-}
-
-
 @media only screen and (max-width: 900px) {
     .content {
         padding: 0 3rem;
-    }
-
-    .navigation {
-        grid-template-columns: 1fr 1fr;
     }
 }
 

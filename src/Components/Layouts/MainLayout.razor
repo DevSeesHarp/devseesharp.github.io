@@ -3,15 +3,7 @@
 
 <div class="page">
     <main>
-        <div class="navigation">
-            <div>
-                <h1 @onclick="NavigationHandler.Home.OnClick">EQ2 Technology</h1>
-            </div>
-            <span />
-            <button class="btn" @onclick="() => _menuVisible = !_menuVisible">
-                <h1>/</h1>
-            </button>
-        </div>
+        <Banner NavigationMode="BannerMode" />
         <article class="content">
             @Body
         </article>
@@ -19,30 +11,10 @@
         <Footer />
     </main>
 </div>
-
-<Modal @bind-IsVisible="_menuVisible">
-    <div class="navigation-links">
-        <ul style="list-style: none;">
-            @foreach (var item in NavigationHandler.Items)
-            {
-                <li>
-                    <b style="font-size: xx-large;">&#x203A;&nbsp;</b>
-                    <a @onclick="@(() => OnNavigate(item))">@item.Text</a>
-                </li>
-            }
-        </ul>
-    </div>
-</Modal>
-
-
 @code
 {
-    bool _menuVisible;
-
-    void OnNavigate(NavigationHandler.NavigationLinks item)
-    {
-        item.OnClick.Invoke();
-        _menuVisible = false;
-        StateHasChanged();
-    }
+    Banner.Mode BannerMode
+        => NavigationHandler.IsHome
+        ? Banner.Mode.Links
+        : Banner.Mode.Menu; 
 }

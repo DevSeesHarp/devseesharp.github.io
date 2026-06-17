@@ -1,4 +1,4 @@
-#landing {
+#banner-container {
   min-height: 80vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -7,59 +7,50 @@
   width: stretch; /* Standard syntax */
 }
 
-#landing .landing-header{
-      padding-inline-start: 40px;
+#banner-container .banner-logo{
+  padding-inline-start: 40px;
 }
 
-#landing h1 {
+#banner-container h1 {
   font-size: xxx-large;
   font-weight: bolder;
 }
 
-#landing h1::after {
+#banner-container .banner-logo h1::after {
   content: "_";
-  color: #ffe100;
-  /* or "|" */
+  color: #ffbf00;
   margin-left: 6px;
   animation: blink 1s steps(2, start) infinite;
 }
 
-#landing ul 
+#banner-container ul 
 {
   list-style: none;
 }
-#landing li {
+#banner-container li {
   font-size: x-large;
   line-height: 2;
   font-weight: bolder;
 }
 
-#landing li a {
+#banner-container li a {
   position: relative;
   text-decoration: none;
   color: inherit;
 }
 
 /* Blinking cursor */
-#landing li a:hover {
+#banner-container li a:hover {
   color: #ffe100a1;
 }
 
-#landing li a:hover::after {
+#banner-container li a:hover::after {
   color: #ffe100;
   margin-left: 6px;
 }
 
 @media only screen and (max-width: 900px) {
-  #landing {
+  #banner-container {
     min-height: 90vh;
-  }
-
-  #landing .landing-header {
-    grid-column: 1 / span 2;
-  }
-
-  #landing .landing-links {
-    grid-column: 1 / span 2;
   }
 }

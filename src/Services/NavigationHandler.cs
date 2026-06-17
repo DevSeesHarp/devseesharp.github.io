@@ -4,12 +4,12 @@ namespace blazorwasm.Services;
 
 public class NavigationHandler
 {
-    private readonly NavigationManager _manager;
-
+    readonly NavigationManager _manager;
+    readonly Uri _base;
     public NavigationHandler(NavigationManager manager)
     {
         _manager = manager;
-        
+        _base = new Uri(manager.BaseUri);
         Home = new (Text: "/", () => NavigateTo(Paths.Home));
 
         Items =
@@ -23,6 +23,8 @@ public class NavigationHandler
 
     public NavigationLinks[] Items = [];
     public NavigationLinks Home { get; }
+    public bool IsHome 
+        => _manager.Uri.Equals(_manager.BaseUri, StringComparison.OrdinalIgnoreCase);
 
     void NavigateTo(string path)
         => _manager.NavigateTo(path);
